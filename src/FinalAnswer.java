@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -29,21 +30,12 @@ public class FinalAnswer {
         this.finalAnswer = finalAnswer;
     }
 
-    public ArrayList<Integer> FindFactors(int number){
+    public int[] BruteForce(int[] numbers, char[] operators, int finalAnswer) {
+        ArrayList<Integer> answers;
+        ArrayList<Integer> finalAnswers;
+        for (int i = 0; i < numbers.length; i++) {
 
-        ArrayList<int[]> factors = new ArrayList<>();
-        Queue<Integer> Q = new LinkedList<>();
-
-        for (int i = 1; i <= number; i++) {
-            if (i == Q.peek())
-            if (number % i == 0) {
-                int factor = number / i;
-                int[] factorPair = {factor, i};
-
-            }
         }
-
-        return factors;
     }
 
     public static void main(String[] args) {
@@ -67,12 +59,10 @@ public class FinalAnswer {
             FinalAnswer answer = new FinalAnswer(finalAnswer, numbers);
 
             // Implement SummleSolver Algorithm:
-            // Start with the final answer and add the numbers starting from smallest to largest
-            // For each sum (including the answer itself), find the pairs of factors
-            // see if one of the pairs matches a number in the numbers list
-            // repeat this until there is not a factor that is a number from the numbers list
-            // brute force solve the other factor
-            // make sure to save the processes and numbers used through, then show answer
+            // Start with the final answer and then add and subtract the numbers going from smallest to largest
+            // For each sum and difference, see if the numbers are divisible by the rest of the numbers
+            // if there is a number that is divisible, divide it and get the quotient and repeat the process.
+            // if the process cannot go on anymore, use brute force
 
 
 
